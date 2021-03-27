@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    身份证号码: <input type="text" id="idno" value="430000198101118929" />
+    <button onclick="onValidClick()">校验</button>
+    <p id="validRs"></p>
+</body>
+
+<script src="../dist/index.umd.js"></script>
+<script>
+    function onValidClick() {
+        debugger
+        var validRsDom = document.getElementById('validRs');
+        var value = document.getElementById('idno').value;
+        var rs = CnIdNoValidator.isValid(value);
+        validRsDom.innerText = rs ? '通过' : '失败';
+    }
+</script>
+</html>
